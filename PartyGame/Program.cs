@@ -40,7 +40,7 @@ namespace PartyGame
                             level = levelService.SetLevel();
 
                             PlayerService.PrintPlayersList(players);
-                            Console.WriteLine($"Poziom trudności: {level}");
+                            Console.WriteLine($"Level: {level}");
                             Console.WriteLine();
                         }
                         break;
@@ -90,11 +90,7 @@ namespace PartyGame
                                     case ' ':
                                         {
                                             currentPlayer = players[i % players.Count];
-
-                                            Console.WriteLine($"currentPlayer.Id = { (i % players.Count) }, currentPlayer.Name = {currentPlayer.Name}");
                                             i++;
-                                            Console.ReadKey();
-
                                             rolledPlayer = Game.NextRound(players, level, currentPlayer);                                            
                                         }
                                         break;

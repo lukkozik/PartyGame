@@ -5,20 +5,11 @@ namespace PartyGame
 {
     public class LevelService
     {
-        //public List<Level> Levels { get; set; }
-        //public int CurrentLevel { get; set; }
-
-        //public LevelService()
-        //{
-        //    Levels = new List<Level>();
-        //}
-
         public int SetLevel()
         {
             Console.Clear();
             Console.Write("Enter difficulty level (1 / 2 / 3): ");
             int level = Convert.ToInt32(Console.ReadLine());
-            //CurrentLevel = level;
 
             AddLevels();
 

@@ -47,12 +47,8 @@ namespace PartyGame
             
             while(currentPlayer.Id == rolledPlayerId || rolledPlayerId == -1)
             {
-                
                 var random = new Random();
                 rolledPlayerId = random.Next(0, players.Count);
-
-                Console.WriteLine($"WHILE: currentPlayerID = {currentPlayer.Id}, rolledPlayerID = {rolledPlayerId}");
-                Console.ReadKey();
             }
 
             return rolledPlayerId;
@@ -133,6 +129,19 @@ namespace PartyGame
 
             var nextPlayer = players[(currentPlayer.Id + 1) % players.Count];
 
+            if (currentPlayer.Gender == 'F')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            Console.Write($"{currentPlayer.Name}");
+            Console.ResetColor();
+            Console.Write("  ==>  ");
+
+
             if (rolledPlayer.Gender == 'F')
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -157,6 +166,8 @@ namespace PartyGame
             }
             Console.Write($"{nextPlayer.Name}: ");
             Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine();
         }
     }
