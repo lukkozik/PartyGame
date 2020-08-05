@@ -1,0 +1,13 @@
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\bin\Debug\netcoreapp3.1\PartyGame.exe
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\bin\Debug\netcoreapp3.1\PartyGame.deps.json
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\bin\Debug\netcoreapp3.1\PartyGame.runtimeconfig.json
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\bin\Debug\netcoreapp3.1\PartyGame.runtimeconfig.dev.json
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\bin\Debug\netcoreapp3.1\PartyGame.dll
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\bin\Debug\netcoreapp3.1\PartyGame.pdb
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.csprojAssemblyReference.cache
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.AssemblyInfoInputs.cache
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.AssemblyInfo.cs
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.csproj.CoreCompileInputs.cache
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.dll
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.pdb
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.genruntimeconfig.cache
