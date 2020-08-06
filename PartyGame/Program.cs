@@ -77,7 +77,6 @@ namespace PartyGame
                                         break;
                                     case '2':
                                         {
-                                            currentPlayer = players[i % players.Count]; 
                                             Console.Clear(); 
                                             Game.RerollTask(rolledPlayer, level, currentPlayer, players);
                                         }

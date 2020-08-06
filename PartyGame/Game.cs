@@ -110,14 +110,6 @@ namespace PartyGame
             }
         }
 
-        //private static void WriteTask(Player rolledPlayer, string task)
-        //{
-        //    Console.Clear();
-        //    Helpers.ColorName(rolledPlayer);
-        //    Console.Write(": ");
-        //    Console.WriteLine(task);
-        //}
-
         private static void WriteTask(Player rolledPlayer, string task, Player currentPlayer, List<Player> players)
         {
             var nextPlayer = players[(currentPlayer.Id + 1) % players.Count];
