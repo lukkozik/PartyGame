@@ -77,7 +77,7 @@ namespace PartyGame
                                         break;
                                     case '2':
                                         {
-                                            Console.Clear(); 
+                                            //Console.Clear(); 
                                             Game.RerollTask(rolledPlayer, level, currentPlayer, players);
                                         }
                                         break;

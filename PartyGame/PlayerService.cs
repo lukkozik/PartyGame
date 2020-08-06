@@ -33,9 +33,7 @@ namespace PartyGame
                 Console.WriteLine();
 
                 AddNewPlayer(i);
-
                 Console.Clear();
-
                 PrintPlayersList(Players);
             }
         }
