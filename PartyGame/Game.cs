@@ -19,15 +19,15 @@ namespace PartyGame
 
         public static Player NextRound(List<Player> players, int level, Player currentPlayer)
         {
-            Player rolledPlayer = players[RollPlayer(players, currentPlayer)];
-            string task = RollTask(rolledPlayer, level);
+            Player rolledPlayer = players[DrawPlayer(players, currentPlayer)];
+            string task = DrawTask(rolledPlayer, level);
 
             WriteTask(rolledPlayer, task, currentPlayer, players);
 
             return rolledPlayer;
         }
 
-        private static int RollPlayer(List<Player> players, Player currentPlayer)
+        private static int DrawPlayer(List<Player> players, Player currentPlayer)
         {
             int rolledPlayerId = -1;
 
@@ -40,7 +40,7 @@ namespace PartyGame
             return rolledPlayerId;
         }
 
-        private static string RollTask(Player rolledPlayer, int level)
+        private static string DrawTask(Player rolledPlayer, int level)
         {
             string path = Helpers.SetPath(rolledPlayer, level);
             var tasks = string.Concat(string.Concat(File.ReadAllText(path).Split("\n\n")).Split('\n')).Trim().Split(".;");
@@ -49,13 +49,13 @@ namespace PartyGame
             return tasks[random.Next(0, tasks.Length - 1)];
         }
 
-        public static void RerollTask(Player rolledPlayer, int level, Player currentPlayer, List<Player> players)
+        public static void RedrawTask(Player rolledPlayer, int level, Player currentPlayer, List<Player> players)
         {
             Console.Clear(); 
             
             if (rolledPlayer.Id > 0)
             {
-                string task = RollTask(rolledPlayer, level);
+                string task = DrawTask(rolledPlayer, level);
                 WriteTask(rolledPlayer, task, currentPlayer, players);
             }
             else
