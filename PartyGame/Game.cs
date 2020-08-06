@@ -11,9 +11,9 @@ namespace PartyGame
 
         public static void ShowGameSettings(List<Player> players, int level)
         {
-            Console.Clear(); 
+            Console.Clear();
             PlayerService.PrintPlayersList(players);
-            Console.WriteLine($"Poziom trudności: {level}");
+            Console.WriteLine($"Level: {level}");
             Console.WriteLine();
         }
 
@@ -27,25 +27,13 @@ namespace PartyGame
             return rolledPlayer;
         }
 
-        public static void RerollTask(Player rolledPlayer, int level)
-        {
-            if (rolledPlayer.Id > 0)
-            {
-                string task = RollTask(rolledPlayer, level);
-                WriteTask(rolledPlayer, task);
-            }
-            else
-            {
-                Console.WriteLine("Press [SPACE] to start game");
-                Console.WriteLine();
-            }
-        }
+
 
         private static int RollPlayer(List<Player> players, Player currentPlayer)
         {
             int rolledPlayerId = -1;
-            
-            while(currentPlayer.Id == rolledPlayerId || rolledPlayerId == -1)
+
+            while (currentPlayer.Id == rolledPlayerId || rolledPlayerId == -1)
             {
                 var random = new Random();
                 rolledPlayerId = random.Next(0, players.Count);
@@ -63,109 +51,89 @@ namespace PartyGame
             return tasks[random.Next(0, tasks.Length - 1)];
         }
 
+        public static void RerollTask(Player rolledPlayer, int level, Player currentPlayer, List<Player> players)
+        {
+            if (rolledPlayer.Id > 0)
+            {
+                string task = RollTask(rolledPlayer, level);
+                WriteTask(rolledPlayer, task, currentPlayer, players);
+            }
+            else
+            {
+                Console.WriteLine("Press [SPACE] to start game");
+                Console.WriteLine();
+            }
+        }
+
         private static string SetPath(Player rolledPlayer, int level)
         {
+            string path = @"C:\Users\Łukasz\Desktop\Butelka\";
             switch (level)
             {
                 case 1:
                     {
                         if (rolledPlayer.Gender == 'M')
                         {
-                            return @"C:\Users\Łukasz\Desktop\Butelka\runda_1M.txt";
+                            return path + "runda_1M.txt";
                         }
                         else
                         {
-                            return @"C:\Users\Łukasz\Desktop\Butelka\runda_1F.txt";
+                            return path + "runda_1F.txt";
                         }
                     }
                 case 2:
                     {
                         if (rolledPlayer.Gender == 'M')
                         {
-                            return @"C:\Users\Łukasz\Desktop\Butelka\runda_2M.txt";
+                            return path + "runda_2M.txt";
                         }
                         else
                         {
-                            return @"C:\Users\Łukasz\Desktop\Butelka\runda_2F.txt";
+                            return path + "runda_2F.txt";
                         }
                     }
                 case 3:
                     {
                         if (rolledPlayer.Gender == 'M')
                         {
-                            return @"C:\Users\Łukasz\Desktop\Butelka\runda_3M.txt";
+                            return path + "runda_3M.txt";
                         }
                         else
                         {
-                            return @"C:\Users\Łukasz\Desktop\Butelka\runda_3F.txt";
+                            return path + "runda_3F.txt";
                         }
                     }
                 default:
                     {
-                        return @"C:\Users\Łukasz\Desktop\Butelka\runda_0.txt";
+                        return path + "runda_0.txt";
                     }
             }
         }
- 
-        private static void WriteTask(Player rolledPlayer, string task)
-        {
-            Console.Clear();
-            if (rolledPlayer.Gender == 'F')
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Blue;
-            }
-            Console.Write($"{rolledPlayer.Name}: ");
-            Console.ResetColor();
-            Console.WriteLine(task);
-        }
+
+        //private static void WriteTask(Player rolledPlayer, string task)
+        //{
+        //    Console.Clear();
+        //    Helpers.ColorName(rolledPlayer);
+        //    Console.Write(": ");
+        //    Console.WriteLine(task);
+        //}
 
         private static void WriteTask(Player rolledPlayer, string task, Player currentPlayer, List<Player> players)
         {
-            Console.Clear();
-
             var nextPlayer = players[(currentPlayer.Id + 1) % players.Count];
 
-            if (currentPlayer.Gender == 'F')
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Blue;
-            }
-            Console.Write($"{currentPlayer.Name}");
-            Console.ResetColor();
+            Console.Clear();
+            Helpers.ColorName(currentPlayer);
             Console.Write("  ==>  ");
 
-
-            if (rolledPlayer.Gender == 'F')
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Blue;
-            }
-            Console.Write($"{rolledPlayer.Name}: ");
-            Console.ResetColor();
+            Helpers.ColorName(rolledPlayer);
+            Console.Write(": ");
             Console.WriteLine(task);
 
             Console.WriteLine();
             Console.Write("Next turn: ");
-            if (nextPlayer.Gender == 'F')
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Blue;
-            }
-            Console.Write($"{nextPlayer.Name}: ");
-            Console.ResetColor();
+            Helpers.ColorName(nextPlayer);
+            Console.Write(": ");
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();

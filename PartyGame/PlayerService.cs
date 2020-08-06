@@ -49,8 +49,11 @@ namespace PartyGame
             Console.Write("Name: ");
             player.Name = Console.ReadLine().ToUpper().Trim();
 
-            Console.Write("Gender (M / F): ");
-            player.Gender = Convert.ToChar(Console.ReadLine().ToUpper().Trim());
+            while (string.IsNullOrWhiteSpace(Convert.ToString(player.Gender)) || !(player.Gender == 'M' || player.Gender == 'F'))
+            {
+                Console.Write("Gender (M / F): ");
+                player.Gender = Convert.ToChar(Console.ReadLine().ToUpper().Trim()); 
+            }
 
             Players.Add(player);
         }
@@ -62,16 +65,8 @@ namespace PartyGame
             foreach (var player in players)
             {
                 Console.Write($"   {player.Id + 1}. ");
-                if (player.Gender == 'F')
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                }
-                Console.WriteLine($"{player.Name}");
-                Console.ResetColor();
+                Helpers.ColorName(player);
+                Console.WriteLine();
             }
             Console.WriteLine();
         }
