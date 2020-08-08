@@ -34,7 +34,7 @@ namespace PartyGame
         {
             Console.Clear();
 
-            if (rolledPlayer.Id > 0)
+            if (!string.IsNullOrWhiteSpace(rolledPlayer.Name))
             {
                 string task = DrawTask(rolledPlayer, level);
                 WriteTask(rolledPlayer, task, currentPlayer, players);
@@ -87,5 +87,45 @@ namespace PartyGame
             Console.WriteLine();
             Console.WriteLine();
         }
+
+        public static bool GameNextMove(ref Player rolledPlayer, int level, ref Player currentPlayer, List<Player> players, ref int roundCounter)
+        {
+            var gameOperation = Console.ReadKey();
+
+            switch (gameOperation.KeyChar)
+            {
+                case '1':
+                    {
+                        ShowGameSettings(players, level);
+                    }
+                    break;
+                case '2':
+                    {
+                        RepeatRound(rolledPlayer, level, currentPlayer, players);
+                    }
+                    break;
+                case '0':
+                    {
+                        return false;
+                    }
+                case ' ':
+                    {
+                        currentPlayer = players[roundCounter % players.Count];
+                        roundCounter++;
+                        rolledPlayer = NextRound(players, level, currentPlayer);
+                    }
+                    break;
+                default:
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Action you entered does not exist");
+                        Console.WriteLine();
+                    }
+                    break;
+            }
+
+            return true;
+        }
+
     }
 }

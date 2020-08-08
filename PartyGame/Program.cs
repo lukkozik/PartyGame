@@ -50,9 +50,7 @@ namespace PartyGame
                     case '2':
                         {
                             var levelService = new LevelService();
-                            level = levelService.SetLevel();
-
-                            
+                            level = levelService.SetLevel();                            
                         }
                         break;
                     case '3':
@@ -89,16 +87,15 @@ namespace PartyGame
 
         private static void StartGameView (List<Player> players, int level)
         {
-            
             bool continueLoop = true;
             int roundCounter = 0;
-            
+            var rolledPlayer = new Player();
+            var currentPlayer = new Player();
+
             Console.Clear();
 
             while (continueLoop)
             {
-                var rolledPlayer = new Player();
-                var currentPlayer = new Player(); 
                 level = ProgressBar(roundCounter, players, level);
                 
                 Console.WriteLine("      1. Show game settings");
@@ -107,45 +104,7 @@ namespace PartyGame
                 Console.WriteLine();
                 Console.WriteLine("[SPACE]. Next round");
 
-                //Console.WriteLine("MAIN: rolledPlayer.Name = " + rolledPlayer.Name);
-                //Console.WriteLine("MAIN: currentPlayer.Name = " + currentPlayer.Name);
-                //Console.ReadKey();
-                //GameNextMove(rolledPlayer, level, currentPlayer, players, ref roundCounter);
-
-                var gameOperation = Console.ReadKey();
-
-                switch (gameOperation.KeyChar)
-                {
-                    case '1':
-                        {
-                            Game.ShowGameSettings(players, level);
-                        }
-                        break;
-                    case '2':
-                        {
-                            Game.RepeatRound(rolledPlayer, level, currentPlayer, players);
-                        }
-                        break;
-                    case '0':
-                        {
-                            continueLoop = false;
-                        }
-                        break;
-                    case ' ':
-                        {
-                            currentPlayer = players[roundCounter % players.Count];
-                            roundCounter++;
-                            rolledPlayer = Game.NextRound(players, level, currentPlayer);
-                        }
-                        break;
-                    default:
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Action you entered does not exist");
-                            Console.WriteLine();
-                        }
-                        break;
-                }
+                continueLoop = Game.GameNextMove(ref rolledPlayer, level, ref currentPlayer, players, ref roundCounter);
             }
         }
 
@@ -168,43 +127,5 @@ namespace PartyGame
             return level;
         }
 
-        private static bool GameNextMove(Player rolledPlayer, int level, Player currentPlayer, List<Player> players, ref int roundCounter)
-        {
-            var gameOperation = Console.ReadKey();
-
-            switch (gameOperation.KeyChar)
-            {
-                case '1':
-                    {
-                        Game.ShowGameSettings(players, level);
-                    }
-                    break;
-                case '2':
-                    {
-                        Game.RepeatRound(rolledPlayer, level, currentPlayer, players);
-                    }
-                    break;
-                case '0':
-                    {
-                        return false;
-                    }
-                case ' ':
-                    {
-                        currentPlayer = players[roundCounter % players.Count];
-                        roundCounter++;
-                        rolledPlayer = Game.NextRound(players, level, currentPlayer);
-                    }
-                    break;
-                default:
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Action you entered does not exist");
-                        Console.WriteLine();
-                    }
-                    break;
-            }
-
-            return true;
-        }
     }
 }
