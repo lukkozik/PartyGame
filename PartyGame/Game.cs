@@ -15,6 +15,9 @@ namespace PartyGame
             PlayerService.PrintPlayersList(players);
             Console.WriteLine($"Level: {level}");
             Console.WriteLine();
+            Console.Write("Press any key to get back... ");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         public static Player NextRound(List<Player> players, int level, Player currentPlayer)
@@ -25,6 +28,22 @@ namespace PartyGame
             WriteTask(rolledPlayer, task, currentPlayer, players);
 
             return rolledPlayer;
+        }
+
+        public static void RepeatRound(Player rolledPlayer, int level, Player currentPlayer, List<Player> players)
+        {
+            Console.Clear();
+
+            if (rolledPlayer.Id > 0)
+            {
+                string task = DrawTask(rolledPlayer, level);
+                WriteTask(rolledPlayer, task, currentPlayer, players);
+            }
+            else
+            {
+                Console.WriteLine("Press [SPACE] to start game");
+                Console.WriteLine();
+            }
         }
 
         private static int DrawPlayer(List<Player> players, Player currentPlayer)
@@ -49,22 +68,6 @@ namespace PartyGame
             return tasks[random.Next(0, tasks.Length - 1)];
         }
 
-        public static void RedrawTask(Player rolledPlayer, int level, Player currentPlayer, List<Player> players)
-        {
-            Console.Clear(); 
-            
-            if (rolledPlayer.Id > 0)
-            {
-                string task = DrawTask(rolledPlayer, level);
-                WriteTask(rolledPlayer, task, currentPlayer, players);
-            }
-            else
-            {
-                Console.WriteLine("Press [SPACE] to start game");
-                Console.WriteLine();
-            }
-        }
-
         private static void WriteTask(Player rolledPlayer, string task, Player currentPlayer, List<Player> players)
         {
             var nextPlayer = players[(currentPlayer.Id + 1) % players.Count];
@@ -80,7 +83,6 @@ namespace PartyGame
             Console.WriteLine();
             Console.Write("Next turn: ");
             Helpers.ColorName(nextPlayer);
-            Console.Write(": ");
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();

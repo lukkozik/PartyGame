@@ -17,6 +17,13 @@ namespace PartyGame
 
             return level;
         }
+        
+        public int SetLevel(int level)
+        {
+            AddLevels();
+
+            return level;
+        }
 
         private void AddLevels()
         {

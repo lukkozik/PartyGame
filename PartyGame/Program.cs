@@ -11,12 +11,25 @@ namespace PartyGame
             actionService = Initialize(actionService);
 
             var players = new List<Player>();
-            int level = 0;
-
+            int level = 1;
             bool continueMainLoop = true;
 
             while (continueMainLoop)
             {
+                Console.Clear();
+
+                if (players.Count > 0)
+                {
+                    PlayerService.PrintPlayersList(players);
+                }
+                else
+                {
+                    Console.WriteLine("No players added");
+                }
+
+                Console.WriteLine($"Level: {level}");
+                Console.WriteLine();
+
                 var mainMenu = actionService.GetMenuActionByMenuName("Main");
 
                 foreach (var item in mainMenu)
@@ -39,70 +52,12 @@ namespace PartyGame
                             var levelService = new LevelService();
                             level = levelService.SetLevel();
 
-                            PlayerService.PrintPlayersList(players);
-                            Console.WriteLine($"Level: {level}");
-                            Console.WriteLine();
+                            
                         }
                         break;
                     case '3':
                         {
-                            Console.Clear();
-                            
-                            var rolledPlayer = new Player();
-                            var currentPlayer = new Player();
-                            bool continueLoop = true;
-                            int i = 0;
-
-                            while (continueLoop)
-                            {
-                                
-                                
-                                Console.WriteLine("      1. Show game settings");
-                                Console.WriteLine("      2. Reroll task");
-                                Console.WriteLine("      0. Get back");
-                                Console.WriteLine();
-                                Console.WriteLine("[SPACE]. Next round");
-
-                                var gameOperation = Console.ReadKey();
-
-                                switch (gameOperation.KeyChar)
-                                {
-                                    case '1':
-                                        {
-                                            Game.ShowGameSettings(players, level);
-                                            Console.Write("Press any key to get back... ");
-                                            Console.ReadKey();
-                                            Console.Clear();
-                                        }
-                                        break;
-                                    case '2':
-                                        {
-                                            //Console.Clear(); 
-                                            Game.RedrawTask(rolledPlayer, level, currentPlayer, players);
-                                        }
-                                        break;
-                                    case '0':
-                                        {
-                                            continueLoop = false;
-                                            Console.Clear();
-                                        }
-                                        break;
-                                    case ' ':
-                                        {
-                                            currentPlayer = players[i % players.Count];
-                                            i++;
-                                            rolledPlayer = Game.NextRound(players, level, currentPlayer);                                            
-                                        }
-                                        break;
-                                    default:
-                                        {
-                                            Console.Clear(); 
-                                            Console.WriteLine("Action you entered does not exist");
-                                            Console.WriteLine();
-                                        }
-                                        break;
-                                }
-                            }
+                            StartGameView(players, level);
                         }
                         break;
                     case '0':
@@ -130,6 +85,126 @@ namespace PartyGame
             actionService.AddNewAction(0, "Exit game", "Main");
 
             return actionService;
+        }
+
+        private static void StartGameView (List<Player> players, int level)
+        {
+            
+            bool continueLoop = true;
+            int roundCounter = 0;
+            
+            Console.Clear();
+
+            while (continueLoop)
+            {
+                var rolledPlayer = new Player();
+                var currentPlayer = new Player(); 
+                level = ProgressBar(roundCounter, players, level);
+                
+                Console.WriteLine("      1. Show game settings");
+                Console.WriteLine("      2. Repeat round");
+                Console.WriteLine("      0. Get back");
+                Console.WriteLine();
+                Console.WriteLine("[SPACE]. Next round");
+
+                //Console.WriteLine("MAIN: rolledPlayer.Name = " + rolledPlayer.Name);
+                //Console.WriteLine("MAIN: currentPlayer.Name = " + currentPlayer.Name);
+                //Console.ReadKey();
+                //GameNextMove(rolledPlayer, level, currentPlayer, players, ref roundCounter);
+
+                var gameOperation = Console.ReadKey();
+
+                switch (gameOperation.KeyChar)
+                {
+                    case '1':
+                        {
+                            Game.ShowGameSettings(players, level);
+                        }
+                        break;
+                    case '2':
+                        {
+                            Game.RepeatRound(rolledPlayer, level, currentPlayer, players);
+                        }
+                        break;
+                    case '0':
+                        {
+                            continueLoop = false;
+                        }
+                        break;
+                    case ' ':
+                        {
+                            currentPlayer = players[roundCounter % players.Count];
+                            roundCounter++;
+                            rolledPlayer = Game.NextRound(players, level, currentPlayer);
+                        }
+                        break;
+                    default:
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Action you entered does not exist");
+                            Console.WriteLine();
+                        }
+                        break;
+                }
+            }
+        }
+
+        private static int ProgressBar(int roundCounter, List<Player> players, int level)
+        {
+            int progress = (int)((float)(roundCounter) / (players.Count * 8) * 100);
+
+            if (progress > 100)
+            {
+                progress -= (level - 1) * 100;
+            }
+
+            Console.WriteLine($"ROUND PROGRESS: {progress}%");
+            Console.WriteLine();
+
+            if (progress == 100)
+            {
+                level++;
+            }
+            return level;
+        }
+
+        private static bool GameNextMove(Player rolledPlayer, int level, Player currentPlayer, List<Player> players, ref int roundCounter)
+        {
+            var gameOperation = Console.ReadKey();
+
+            switch (gameOperation.KeyChar)
+            {
+                case '1':
+                    {
+                        Game.ShowGameSettings(players, level);
+                    }
+                    break;
+                case '2':
+                    {
+                        Game.RepeatRound(rolledPlayer, level, currentPlayer, players);
+                    }
+                    break;
+                case '0':
+                    {
+                        return false;
+                    }
+                case ' ':
+                    {
+                        currentPlayer = players[roundCounter % players.Count];
+                        roundCounter++;
+                        rolledPlayer = Game.NextRound(players, level, currentPlayer);
+                    }
+                    break;
+                default:
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Action you entered does not exist");
+                        Console.WriteLine();
+                    }
+                    break;
+            }
+
+            return true;
         }
     }
 }
