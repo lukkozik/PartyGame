@@ -1,0 +1,8 @@
+1F Wypij jeden kieliszek.;
+1F Wypij 2 kieliszki.;
+1F Wypij szklankę wody.;
+
+1F Zaszczekaj 5 razy.;
+1F Zamiaucz 5 razy.;
+1F Powiedz wiersz.;
+1F Zaśpiewaj coś.;

@@ -138,6 +138,5 @@ namespace PartyGame
             }
             return level;
         }
-
     }
 }

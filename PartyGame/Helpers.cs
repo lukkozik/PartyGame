@@ -22,7 +22,7 @@ namespace PartyGame
 
         public static string SetPath(Player randomPlayer, int level)
         {
-            string path = @"C:\PartyGame\";
+            string path = @"C:\PartyGame\files\";
             switch (level)
             {
                 case 1:

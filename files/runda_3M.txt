@@ -1,0 +1,8 @@
+3M Wypij jeden kieliszek.;
+3M Wypij 2 kieliszki.;
+3M Wypij szklankę wody.;
+
+3M Zaszczekaj 5 razy.;
+3M Zamiaucz 5 razy.;
+3M Powiedz wiersz.;
+3M Zaśpiewaj coś.;
