@@ -48,6 +48,7 @@ namespace PartyGame
                         }
                     }
                 case 3:
+                default:
                     {
                         if (rolledPlayer.Gender == 'M')
                         {
@@ -58,11 +59,69 @@ namespace PartyGame
                             return path + "runda_3F.txt";
                         }
                     }
-                default:
-                    {
-                        return path + "runda_0.txt";
-                    }
             }
+        }
+
+        public static int SetNumberOfPlayers()
+        {
+            int numberOfPlayers = 0;
+
+            while (numberOfPlayers < 2)
+            {
+                Console.Clear();
+                Console.Write("Enter number of players: ");
+                var input = Console.ReadLine();
+
+                int inputValue;
+                if (int.TryParse(input, out inputValue))
+                {
+                    numberOfPlayers = inputValue;
+                }
+            }
+
+            Console.Clear();
+
+            return numberOfPlayers;
+        }
+
+        public static string SetPlayerName()
+        {
+            string name = "";
+            while (string.IsNullOrWhiteSpace(name))
+            {
+                Console.Write("Name: ");
+                name = Console.ReadLine().ToUpper().Trim();
+
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    ClearCurrentConsoleLine();
+                }                    
+            }
+
+            return name;
+        }
+
+        public static char SetPlayerGender()
+        {
+            string gender = "";
+            while (string.IsNullOrWhiteSpace(gender) || !(gender == "M" || gender == "F"))
+            {
+                Console.Write("Gender (M / F): ");
+                gender = Console.ReadLine().ToUpper().Trim();
+
+                ClearCurrentConsoleLine();
+            }
+
+            return Convert.ToChar(gender);
+        }
+
+        public static void ClearCurrentConsoleLine()
+        {
+            Console.SetCursorPosition(0, Console.CursorTop - 1);            
+            int currentLineCursor = Console.CursorTop;
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(0, currentLineCursor);
         }
     }
 }

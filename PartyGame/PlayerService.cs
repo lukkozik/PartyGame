@@ -14,11 +14,7 @@ namespace PartyGame
 
         public List<Player> CreatePlayers()
         {
-            Console.Clear();
-            Console.Write("Enter number of players: ");
-            int numberOfPlayers = Convert.ToInt32(Console.ReadLine());
-
-            Console.Clear();
+            int numberOfPlayers = Helpers.SetNumberOfPlayers();         
 
             AddNewPlayerView(numberOfPlayers);
 
@@ -41,17 +37,10 @@ namespace PartyGame
         public void AddNewPlayer(int playerId)
         {
             var player = new Player();
-
             player.Id = playerId;
-
-            Console.Write("Name: ");
-            player.Name = Console.ReadLine().ToUpper().Trim();
-
-            while (string.IsNullOrWhiteSpace(Convert.ToString(player.Gender)) || !(player.Gender == 'M' || player.Gender == 'F'))
-            {
-                Console.Write("Gender (M / F): ");
-                player.Gender = Convert.ToChar(Console.ReadLine().ToUpper().Trim()); 
-            }
+            
+            player.Name = Helpers.SetPlayerName();            
+            player.Gender = Helpers.SetPlayerGender();
 
             Players.Add(player);
         }

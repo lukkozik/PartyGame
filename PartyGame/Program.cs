@@ -77,7 +77,7 @@ namespace PartyGame
 
         private static MenuActionService Initialize(MenuActionService actionService)
         {
-            actionService.AddNewAction(1, "Choose number of players", "Main");
+            actionService.AddNewAction(1, "Add players", "Main");
             actionService.AddNewAction(2, "Choose difficulty level", "Main");
             actionService.AddNewAction(3, "Start game", "Main");
             actionService.AddNewAction(0, "Exit game", "Main");
@@ -87,6 +87,18 @@ namespace PartyGame
 
         private static void StartGameView (List<Player> players, int level)
         {
+            if (players.Count < 2)
+            {
+                Console.Clear();
+                Console.WriteLine("Add at least 2 players first!");
+                Console.WriteLine();
+                Console.Write("Press any key to get back... ");
+                Console.ReadKey();
+
+                return;
+            }
+            
+            
             bool continueLoop = true;
             int roundCounter = 0;
             var rolledPlayer = new Player();
@@ -117,7 +129,7 @@ namespace PartyGame
                 progress -= (level - 1) * 100;
             }
 
-            Console.WriteLine($"ROUND PROGRESS: {progress}%");
+            Console.WriteLine($"ROUND {level} PROGRESS: {progress}%");
             Console.WriteLine();
 
             if (progress == 100)

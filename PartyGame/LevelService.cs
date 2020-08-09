@@ -7,20 +7,24 @@ namespace PartyGame
     {
         public int SetLevel()
         {
-            Console.Clear();
-            Console.Write("Enter difficulty level (1 / 2 / 3): ");
-            int level = Convert.ToInt32(Console.ReadLine());
+            int level = 0;
+
+            while (level < 1 || level > 3)
+            {
+                Console.Clear();
+                Console.Write("Enter difficulty level (1 / 2 / 3): ");
+                var input = Console.ReadLine();
+
+                int inputValue;
+                if (int.TryParse(input, out inputValue))
+                {
+                    level = inputValue;
+                }
+            }
 
             AddLevels();
 
             Console.Clear();
-
-            return level;
-        }
-        
-        public int SetLevel(int level)
-        {
-            AddLevels();
 
             return level;
         }

@@ -22,12 +22,12 @@ namespace PartyGame
 
         public static Player NextRound(List<Player> players, int level, Player currentPlayer)
         {
-            Player rolledPlayer = players[DrawPlayer(players, currentPlayer)];
-            string task = DrawTask(rolledPlayer, level);
+            Player randomPlayer = players[DrawPlayer(players, currentPlayer)];
+            string task = DrawTask(randomPlayer, level);
 
-            WriteTask(rolledPlayer, task, currentPlayer, players);
+            WriteTask(randomPlayer, task, currentPlayer, players);
 
-            return rolledPlayer;
+            return randomPlayer;
         }
 
         public static void RepeatRound(Player rolledPlayer, int level, Player currentPlayer, List<Player> players)
