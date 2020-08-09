@@ -30,14 +30,14 @@ namespace PartyGame
             return randomPlayer;
         }
 
-        public static void RepeatRound(Player rolledPlayer, int level, Player currentPlayer, List<Player> players)
+        public static void RepeatRound(Player randomPlayer, int level, Player currentPlayer, List<Player> players)
         {
             Console.Clear();
 
-            if (!string.IsNullOrWhiteSpace(rolledPlayer.Name))
+            if (!string.IsNullOrWhiteSpace(randomPlayer.Name))
             {
-                string task = DrawTask(rolledPlayer, level);
-                WriteTask(rolledPlayer, task, currentPlayer, players);
+                string task = DrawTask(randomPlayer, level);
+                WriteTask(randomPlayer, task, currentPlayer, players);
             }
             else
             {
@@ -48,27 +48,27 @@ namespace PartyGame
 
         private static int DrawPlayer(List<Player> players, Player currentPlayer)
         {
-            int rolledPlayerId = -1;
+            int randomPlayerId = -1;
 
-            while (currentPlayer.Id == rolledPlayerId || rolledPlayerId == -1)
+            while (currentPlayer.Id == randomPlayerId || randomPlayerId == -1)
             {
                 var random = new Random();
-                rolledPlayerId = random.Next(0, players.Count);
+                randomPlayerId = random.Next(0, players.Count);
             }
 
-            return rolledPlayerId;
+            return randomPlayerId;
         }
 
-        private static string DrawTask(Player rolledPlayer, int level)
+        private static string DrawTask(Player randomPlayer, int level)
         {
-            string path = Helpers.SetPath(rolledPlayer, level);
+            string path = Helpers.SetPath(randomPlayer, level);
             var tasks = string.Concat(string.Concat(File.ReadAllText(path).Split("\n\n")).Split('\n')).Trim().Split(".;");
             var random = new Random();
 
             return tasks[random.Next(0, tasks.Length - 1)];
         }
 
-        private static void WriteTask(Player rolledPlayer, string task, Player currentPlayer, List<Player> players)
+        private static void WriteTask(Player randomPlayer, string task, Player currentPlayer, List<Player> players)
         {
             var nextPlayer = players[(currentPlayer.Id + 1) % players.Count];
 
@@ -76,7 +76,7 @@ namespace PartyGame
             Helpers.ColorName(currentPlayer);
             Console.Write("  ==>  ");
 
-            Helpers.ColorName(rolledPlayer);
+            Helpers.ColorName(randomPlayer);
             Console.Write(": ");
             Console.WriteLine(task);
 
@@ -88,7 +88,7 @@ namespace PartyGame
             Console.WriteLine();
         }
 
-        public static bool GameNextMove(ref Player rolledPlayer, int level, ref Player currentPlayer, List<Player> players, ref int roundCounter)
+        public static bool GameNextMove(ref Player randomPlayer, int level, ref Player currentPlayer, List<Player> players, ref int roundCounter)
         {
             var gameOperation = Console.ReadKey();
 
@@ -101,7 +101,7 @@ namespace PartyGame
                     break;
                 case '2':
                     {
-                        RepeatRound(rolledPlayer, level, currentPlayer, players);
+                        RepeatRound(randomPlayer, level, currentPlayer, players);
                     }
                     break;
                 case '0':
@@ -112,7 +112,7 @@ namespace PartyGame
                     {
                         currentPlayer = players[roundCounter % players.Count];
                         roundCounter++;
-                        rolledPlayer = NextRound(players, level, currentPlayer);
+                        randomPlayer = NextRound(players, level, currentPlayer);
                     }
                     break;
                 default:

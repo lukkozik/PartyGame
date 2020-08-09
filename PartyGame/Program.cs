@@ -101,7 +101,7 @@ namespace PartyGame
             
             bool continueLoop = true;
             int roundCounter = 0;
-            var rolledPlayer = new Player();
+            var randomPlayer = new Player();
             var currentPlayer = new Player();
 
             Console.Clear();
@@ -116,7 +116,7 @@ namespace PartyGame
                 Console.WriteLine();
                 Console.WriteLine("[SPACE]. Next round");
 
-                continueLoop = Game.GameNextMove(ref rolledPlayer, level, ref currentPlayer, players, ref roundCounter);
+                continueLoop = Game.GameNextMove(ref randomPlayer, level, ref currentPlayer, players, ref roundCounter);
             }
         }
 

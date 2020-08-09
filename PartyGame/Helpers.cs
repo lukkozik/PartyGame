@@ -20,14 +20,14 @@ namespace PartyGame
             Console.ResetColor();
         }
 
-        public static string SetPath(Player rolledPlayer, int level)
+        public static string SetPath(Player randomPlayer, int level)
         {
             string path = @"C:\PartyGame\";
             switch (level)
             {
                 case 1:
                     {
-                        if (rolledPlayer.Gender == 'M')
+                        if (randomPlayer.Gender == 'M')
                         {
                             return path + "runda_1M.txt";
                         }
@@ -38,7 +38,7 @@ namespace PartyGame
                     }
                 case 2:
                     {
-                        if (rolledPlayer.Gender == 'M')
+                        if (randomPlayer.Gender == 'M')
                         {
                             return path + "runda_2M.txt";
                         }
@@ -50,7 +50,7 @@ namespace PartyGame
                 case 3:
                 default:
                     {
-                        if (rolledPlayer.Gender == 'M')
+                        if (randomPlayer.Gender == 'M')
                         {
                             return path + "runda_3M.txt";
                         }
