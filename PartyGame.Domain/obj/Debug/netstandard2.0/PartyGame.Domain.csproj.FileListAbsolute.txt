@@ -1,0 +1,9 @@
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.Domain\bin\Debug\netstandard2.0\PartyGame.Domain.deps.json
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.Domain\bin\Debug\netstandard2.0\PartyGame.Domain.dll
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.Domain\bin\Debug\netstandard2.0\PartyGame.Domain.pdb
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.Domain\obj\Debug\netstandard2.0\PartyGame.Domain.csprojAssemblyReference.cache
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.Domain\obj\Debug\netstandard2.0\PartyGame.Domain.AssemblyInfoInputs.cache
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.Domain\obj\Debug\netstandard2.0\PartyGame.Domain.AssemblyInfo.cs
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.Domain\obj\Debug\netstandard2.0\PartyGame.Domain.csproj.CoreCompileInputs.cache
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.Domain\obj\Debug\netstandard2.0\PartyGame.Domain.dll
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.Domain\obj\Debug\netstandard2.0\PartyGame.Domain.pdb

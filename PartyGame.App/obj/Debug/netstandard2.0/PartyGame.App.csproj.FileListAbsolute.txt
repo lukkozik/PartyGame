@@ -1,0 +1,12 @@
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\bin\Debug\netstandard2.0\PartyGame.App.deps.json
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\bin\Debug\netstandard2.0\PartyGame.App.dll
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\bin\Debug\netstandard2.0\PartyGame.App.pdb
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\bin\Debug\netstandard2.0\PartyGame.Domain.dll
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\bin\Debug\netstandard2.0\PartyGame.Domain.pdb
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\obj\Debug\netstandard2.0\PartyGame.App.csprojAssemblyReference.cache
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\obj\Debug\netstandard2.0\PartyGame.App.AssemblyInfoInputs.cache
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\obj\Debug\netstandard2.0\PartyGame.App.AssemblyInfo.cs
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\obj\Debug\netstandard2.0\PartyGame.App.csproj.CoreCompileInputs.cache
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\obj\Debug\netstandard2.0\PartyGame.App.csproj.CopyComplete
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\obj\Debug\netstandard2.0\PartyGame.App.dll
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame.App\obj\Debug\netstandard2.0\PartyGame.App.pdb

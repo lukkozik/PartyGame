@@ -1,10 +1,12 @@
-﻿using PartyGame.Domain.Entity;
+﻿using PartyGame.App.Abstract;
+using PartyGame.Domain.Entity;
 using System;
 using System.Collections.Generic;
 
+
 namespace PartyGame.App.Concrete
 {
-    public class PlayerService
+    public class PlayerService : IPlayerService
     {
         public List<Player> Players { get; set; }
 
@@ -15,7 +17,7 @@ namespace PartyGame.App.Concrete
 
         public List<Player> CreatePlayers()
         {
-            int numberOfPlayers = Helpers.SetNumberOfPlayers();
+            int numberOfPlayers = Helpers.Helpers.SetNumberOfPlayers();
 
             AddNewPlayerView(numberOfPlayers);
 
@@ -40,8 +42,8 @@ namespace PartyGame.App.Concrete
             var player = new Player();
             player.Id = playerId;
 
-            player.Name = Helpers.SetPlayerName();
-            player.Gender = Helpers.SetPlayerGender();
+            player.Name = Helpers.Helpers.SetPlayerName();
+            player.Gender = Helpers.Helpers.SetPlayerGender();
 
             Players.Add(player);
         }
@@ -53,7 +55,7 @@ namespace PartyGame.App.Concrete
             foreach (var player in players)
             {
                 Console.Write($"   {player.Id + 1}. ");
-                Helpers.ColorName(player);
+                Helpers.Helpers.ColorName(player);
                 Console.WriteLine();
             }
             Console.WriteLine();

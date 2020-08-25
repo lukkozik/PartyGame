@@ -1,9 +1,10 @@
-﻿using PartyGame.Domain.Entity;
+﻿using PartyGame.App.Abstract;
+using PartyGame.Domain.Entity;
 using System;
 
 namespace PartyGame.App.Concrete
 {
-    public class LevelService
+    public class LevelService : ILevelService
     {
         public int SetLevel()
         {
@@ -29,7 +30,7 @@ namespace PartyGame.App.Concrete
             return level;
         }
 
-        private void AddLevels()
+        public void AddLevels()
         {
             for (int i = 0; i < 3; i++)
             {

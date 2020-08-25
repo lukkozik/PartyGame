@@ -1,9 +1,10 @@
-﻿using PartyGame.Domain.Entity;
+﻿using PartyGame.App.Abstract;
+using PartyGame.Domain.Entity;
 using System.Collections.Generic;
 
 namespace PartyGame.App.Concrete
 {
-    public class MenuActionService
+    public class MenuActionService : IMenuActionService
     {
         private List<MenuAction> menuActions;
 

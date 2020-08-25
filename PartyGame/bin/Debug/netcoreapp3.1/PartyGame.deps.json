@@ -7,14 +7,41 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "PartyGame/1.0.0": {
+        "dependencies": {
+          "PartyGame.App": "1.0.0",
+          "PartyGame.Domain": "1.0.0"
+        },
         "runtime": {
           "PartyGame.dll": {}
+        }
+      },
+      "PartyGame.App/1.0.0": {
+        "dependencies": {
+          "PartyGame.Domain": "1.0.0"
+        },
+        "runtime": {
+          "PartyGame.App.dll": {}
+        }
+      },
+      "PartyGame.Domain/1.0.0": {
+        "runtime": {
+          "PartyGame.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "PartyGame/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PartyGame.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PartyGame.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

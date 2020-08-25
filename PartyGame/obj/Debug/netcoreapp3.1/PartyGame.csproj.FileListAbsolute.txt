@@ -11,3 +11,8 @@ D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcore
 D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.dll
 D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.pdb
 D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.genruntimeconfig.cache
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\bin\Debug\netcoreapp3.1\PartyGame.App.dll
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\bin\Debug\netcoreapp3.1\PartyGame.Domain.dll
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\bin\Debug\netcoreapp3.1\PartyGame.App.pdb
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\bin\Debug\netcoreapp3.1\PartyGame.Domain.pdb
+D:\Łukasz\Informatyka\KURSY\szkoladotneta\PartyGame\PartyGame\obj\Debug\netcoreapp3.1\PartyGame.csproj.CopyComplete
