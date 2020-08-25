@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using PartyGame.Domain.Entity;
+using System.Collections.Generic;
 
 namespace PartyGame
 {

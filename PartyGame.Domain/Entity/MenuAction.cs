@@ -1,4 +1,4 @@
-﻿namespace PartyGame
+﻿namespace PartyGame.Domain.Entity
 {
     public class MenuAction
     {

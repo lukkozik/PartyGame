@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PartyGame.Domain.Entity;
+using System;
 using System.Collections.Generic;
 
 namespace PartyGame
@@ -14,7 +15,7 @@ namespace PartyGame
 
         public List<Player> CreatePlayers()
         {
-            int numberOfPlayers = Helpers.SetNumberOfPlayers();         
+            int numberOfPlayers = Helpers.SetNumberOfPlayers();
 
             AddNewPlayerView(numberOfPlayers);
 
@@ -24,7 +25,7 @@ namespace PartyGame
         public void AddNewPlayerView(int numberOfPlayers)
         {
             for (int i = 0; i < numberOfPlayers; i++)
-            {              
+            {
                 Console.WriteLine($"*** ADD PLAYER ({i + 1}/{numberOfPlayers})***");
                 Console.WriteLine();
 
@@ -33,18 +34,18 @@ namespace PartyGame
                 PrintPlayersList(Players);
             }
         }
-        
+
         public void AddNewPlayer(int playerId)
         {
             var player = new Player();
             player.Id = playerId;
-            
-            player.Name = Helpers.SetPlayerName();            
+
+            player.Name = Helpers.SetPlayerName();
             player.Gender = Helpers.SetPlayerGender();
 
             Players.Add(player);
         }
-        
+
         public static void PrintPlayersList(List<Player> players)
         {
             Console.WriteLine("Players:");

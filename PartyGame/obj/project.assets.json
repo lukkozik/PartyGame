@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "PartyGame.App/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "PartyGame.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PartyGame.App.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PartyGame.App.dll": {}
+        }
+      },
+      "PartyGame.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/PartyGame.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PartyGame.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PartyGame.App/1.0.0": {
+      "type": "project",
+      "path": "../PartyGame.App/PartyGame.App.csproj",
+      "msbuildProject": "../PartyGame.App/PartyGame.App.csproj"
+    },
+    "PartyGame.Domain/1.0.0": {
+      "type": "project",
+      "path": "../PartyGame.Domain/PartyGame.Domain.csproj",
+      "msbuildProject": "../PartyGame.Domain/PartyGame.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "PartyGame.App >= 1.0.0",
+      "PartyGame.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Łukasz\\.nuget\\packages\\": {}
@@ -32,7 +70,14 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Łukasz\\Informatyka\\KURSY\\szkoladotneta\\PartyGame\\PartyGame.App\\PartyGame.App.csproj": {
+              "projectPath": "D:\\Łukasz\\Informatyka\\KURSY\\szkoladotneta\\PartyGame\\PartyGame.App\\PartyGame.App.csproj"
+            },
+            "D:\\Łukasz\\Informatyka\\KURSY\\szkoladotneta\\PartyGame\\PartyGame.Domain\\PartyGame.Domain.csproj": {
+              "projectPath": "D:\\Łukasz\\Informatyka\\KURSY\\szkoladotneta\\PartyGame\\PartyGame.Domain\\PartyGame.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -58,7 +103,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

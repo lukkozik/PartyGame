@@ -5,4 +5,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PartyGame.App\PartyGame.App.csproj" />
+    <ProjectReference Include="..\PartyGame.Domain\PartyGame.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

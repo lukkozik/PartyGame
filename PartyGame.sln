@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyGame", "PartyGame\PartyGame.csproj", "{98978C01-D1CD-4738-BCEA-8E8A497A5864}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartyGame", "PartyGame\PartyGame.csproj", "{98978C01-D1CD-4738-BCEA-8E8A497A5864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyGame.App", "PartyGame.App\PartyGame.App.csproj", "{13F0A0D2-EAF1-4A8F-8FD7-C8C215FB29F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyGame.Domain", "PartyGame.Domain\PartyGame.Domain.csproj", "{152D0D26-7CF4-473C-BE23-54946D2372D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{98978C01-D1CD-4738-BCEA-8E8A497A5864}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98978C01-D1CD-4738-BCEA-8E8A497A5864}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98978C01-D1CD-4738-BCEA-8E8A497A5864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F0A0D2-EAF1-4A8F-8FD7-C8C215FB29F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F0A0D2-EAF1-4A8F-8FD7-C8C215FB29F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F0A0D2-EAF1-4A8F-8FD7-C8C215FB29F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F0A0D2-EAF1-4A8F-8FD7-C8C215FB29F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{152D0D26-7CF4-473C-BE23-54946D2372D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{152D0D26-7CF4-473C-BE23-54946D2372D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{152D0D26-7CF4-473C-BE23-54946D2372D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{152D0D26-7CF4-473C-BE23-54946D2372D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "b8mgaYISUoFfxBVKx7kfwReHNefeDHLPwxlLmVagTg+4tZOnBOuS+KvE7XxoJuSXO5XjDvyBQzex2XDunv+GvA==",
+  "success": true,
+  "projectFilePath": "D:\\Łukasz\\Informatyka\\KURSY\\szkoladotneta\\PartyGame\\PartyGame.Domain\\PartyGame.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Łukasz\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Łukasz\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
