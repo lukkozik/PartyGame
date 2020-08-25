@@ -26,9 +26,9 @@ namespace PartyGame
         public static Player NextRound(List<Player> players, int level, Player currentPlayer)
         {
             Player randomPlayer = players[DrawPlayer(players, currentPlayer)];
-            string task = DrawTask(randomPlayer, level);
+            string quest = DrawQuest(randomPlayer, level);
 
-            WriteTask(randomPlayer, task, currentPlayer, players);
+            WriteQuest(randomPlayer, quest, currentPlayer, players);
 
             return randomPlayer;
         }
@@ -39,8 +39,8 @@ namespace PartyGame
 
             if (!string.IsNullOrWhiteSpace(randomPlayer.Name))
             {
-                string task = DrawTask(randomPlayer, level);
-                WriteTask(randomPlayer, task, currentPlayer, players);
+                string quest = DrawQuest(randomPlayer, level);
+                WriteQuest(randomPlayer, quest, currentPlayer, players);
             }
             else
             {
@@ -62,16 +62,16 @@ namespace PartyGame
             return randomPlayerId;
         }
 
-        private static string DrawTask(Player randomPlayer, int level)
+        private static string DrawQuest(Player randomPlayer, int level)
         {
             string path = Helpers.SetPath(randomPlayer, level);
-            var tasks = string.Concat(string.Concat(File.ReadAllText(path).Split("\n\n")).Split('\n')).Trim().Split(".;");
+            var quests = string.Concat(string.Concat(File.ReadAllText(path).Split("\n\n")).Split('\n')).Trim().Split(".;");
             var random = new Random();
 
-            return tasks[random.Next(0, tasks.Length - 1)];
+            return quests[random.Next(0, quests.Length - 1)];
         }
 
-        private static void WriteTask(Player randomPlayer, string task, Player currentPlayer, List<Player> players)
+        private static void WriteQuest(Player randomPlayer, string quest, Player currentPlayer, List<Player> players)
         {
             var nextPlayer = players[(currentPlayer.Id + 1) % players.Count];
 
@@ -80,8 +80,8 @@ namespace PartyGame
             Console.Write("  ==>  ");
 
             Helpers.ColorName(randomPlayer);
-            Console.Write(": ");
-            Console.WriteLine(task);
+            Console.WriteLine(": ");
+            Console.WriteLine(quest);
 
             Console.WriteLine();
             Console.Write("Next turn: ");
