@@ -1,7 +1,7 @@
 ﻿using PartyGame.Domain.Entity;
 using System.Collections.Generic;
 
-namespace PartyGame
+namespace PartyGame.App.Concrete
 {
     public class MenuActionService
     {

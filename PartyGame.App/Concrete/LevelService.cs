@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PartyGame.Domain.Entity;
+using System;
 
-namespace PartyGame
+namespace PartyGame.App.Concrete
 {
     public class LevelService
     {

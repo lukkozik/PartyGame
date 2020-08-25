@@ -1,4 +1,5 @@
-﻿using PartyGame.Domain.Entity;
+﻿using PartyGame.App.Concrete;
+using PartyGame.Domain.Entity;
 using System;
 using System.Collections.Generic;
 

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PartyGame
+namespace PartyGame.App.Concrete
 {
     public class PlayerService
     {
